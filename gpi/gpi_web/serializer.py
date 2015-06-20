@@ -13,7 +13,10 @@ class PackageSerializer(json.Serializer):
                     'file': release.file.url,
                     'version': str(release.version)
                 }
-                for release in obj.release_set.all()
+                for release in sorted(
+                    obj.release_set.all(),
+                    key=lambda o: o.version,
+                    reverse=True) 
             ]
             self._current['owner'] = obj.owner.username;
 

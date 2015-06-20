@@ -12,6 +12,4 @@ TODO:
     a. validate they *are* .tar.gz files
     b. validate they contain a gpi.json file
     c. validate the gpi.json file contains required fields
-    
-2. sort releases by version
 ```
