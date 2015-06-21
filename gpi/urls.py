@@ -21,6 +21,8 @@ from gpi import settings
 admin.autodiscover()
 
 urlpatterns = [
+    url(r'^/?$', 'gpi.gpi_web.views.index', name='index'),
+    url(r'^add_email/?$', 'gpi.gpi_web.views.email', name='email'),
     url('^api/', include('gpi.gpi_web.urls')),
     url(r'^admin/', include(admin.site.urls)),
 ]

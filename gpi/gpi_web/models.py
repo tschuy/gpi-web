@@ -39,3 +39,9 @@ class Project(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     modified = models.DateTimeField(auto_now=True)
     owner = models.ForeignKey(User)
+
+class Email(models.Model):
+    def __unicode__(self):
+        return self.email
+
+    email = models.EmailField(unique=True)
