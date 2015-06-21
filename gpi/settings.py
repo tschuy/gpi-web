@@ -20,12 +20,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'ju)xobbvnezl8l0qh1y%b7%u=+!vhaskqiiv+++l4mturwi)$s'
-
+SECRET_KEY = "QCMH3dnVJOyyIQ+LAADlkA3YK3roDjMYM8n1pIyRI9sqOAhUFOifDDE8Ce1LwAGIxnzCO11dStLYzw5+nE75OA=="
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost']
 
 
 # Application definition
@@ -101,7 +100,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = '/home/tschuy/gpi-web/static/'
+STATIC_ROOT = '/opt/gpi_web/static/'
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = '/media/'
+MEDIA_ROOT = '/opt/gpi_web/uploads/'
+MEDIA_URL = '/uploads/'
