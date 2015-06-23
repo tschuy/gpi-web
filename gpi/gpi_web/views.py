@@ -24,6 +24,23 @@ def project_details(request, name=None):
 
     return JsonResponse(data)
 
+
+def project_list(request):
+    projects = Project.objects.all()
+
+    serializer = PackageSerializer()
+
+    data = json.loads(
+        serializer.serialize(
+            projects,
+            use_natural_foreign_keys=True
+        )
+    )
+
+    return JsonResponse(data, safe=False)
+
+
+
 def index(request):
     return render(request, 'index.html', {})
 
