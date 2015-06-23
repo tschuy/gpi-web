@@ -22,7 +22,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = "QCMH3dnVJOyyIQ+LAADlkA3YK3roDjMYM8n1pIyRI9sqOAhUFOifDDE8Ce1LwAGIxnzCO11dStLYzw5+nE75OA=="
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['localhost']
 
@@ -104,3 +104,8 @@ STATIC_ROOT = '/opt/gpi_web/static/'
 
 MEDIA_ROOT = '/opt/gpi_web/uploads/'
 MEDIA_URL = '/uploads/'
+
+try:
+    from .local_settings import *
+except ImportError:
+    pass
