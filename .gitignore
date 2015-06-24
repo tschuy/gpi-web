@@ -1,3 +1,4 @@
 *.sqlite3
 *.pyc
 media/
+gpi/local_settings.py
