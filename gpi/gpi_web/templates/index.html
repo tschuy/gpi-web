@@ -7,48 +7,8 @@
     <link href='//fonts.googleapis.com/css?family=Roboto+Mono' rel='stylesheet' type='text/css'>
     {% load staticfiles %}
     <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
-    <script type="text/javascript">
-        window.onload = function() {
-            submit = document.getElementById('email_submit');
-            submit.onclick = sendEmail;
-        }
-
-        function processEmail() {
-            var result = JSON.parse(this.responseText);
-            console.log(result);
-            if(result.status) {
-                var success_box = document.createElement('div');
-                var message = document.createTextNode('Thanks for signing up!');
-                success_box.appendChild(message);
-                success_box.id = 'message';
-                var email_container = document.getElementById('email_container');
-                email_container.appendChild(success_box);
-                document.getElementById('email').remove();
-            }
-
-            else {
-                if (document.getElementById('message')) {
-                    document.getElementById('message').innerHTML = result.errortext;
-                } else {
-                    var failbox = document.createElement('div');
-                    var message = document.createTextNode(result.errortext);
-                    failbox.appendChild(message);
-                    failbox.id = 'message';
-                    var email = document.getElementById('email');
-                    email.appendChild(failbox);
-                }
-            }
-        }
-
-        function sendEmail() {
-            email_address = document.getElementById('email_box');
-            request = new XMLHttpRequest();
-            request.onload = processEmail;
-            request.open('POST', '/add_email?email=' + email_address.value);
-            request.setRequestHeader('X-CSRFToken', '{{ csrf_token }}');
-            request.send();
-        }
-    </script>
+    <script src="{% static 'email.js' %}"></script>
+    <script src="{% static 'list.js' %}"></script>
 </head>
 <body>
     <div id="main">
@@ -94,6 +54,7 @@
         we'll get back to you as soon as possible:</p></div>
         <div id="email_container">
             <div id="email">
+                <input id="csrf_token" type="hidden" value="{{ csrf_token }}">
                 <input id="email_box" type="text" name="email" placeholder="your@email.com"></input>
                 <input id="email_submit" type="submit" value="▶"></input>
             </div>
