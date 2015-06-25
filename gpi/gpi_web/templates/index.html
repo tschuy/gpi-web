@@ -56,8 +56,15 @@
             <div id="email">
                 <input id="csrf_token" type="hidden" value="{{ csrf_token }}">
                 <input id="email_box" type="text" name="email" placeholder="your@email.com"></input>
-                <input id="email_submit" type="submit" value="▶"></input>
+                <input id="email_submit" type="submit" value="▶" onclick="sendEmail();"></input>
             </div>
+        </div>
+
+    <h1>Current Plugins</h1>
+        <div id="plugins">
+            <p>Here are the most recent plugins uploaded to the Plugin
+            Installer:</p>
+            <div id="plugin_list"></div>
         </div>
     </div>
 </body>

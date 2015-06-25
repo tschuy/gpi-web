@@ -1,8 +1,3 @@
-window.onload = function() {
-    submit = document.getElementById('email_submit');
-    submit.onclick = sendEmail;
-}
-
 function processEmail() {
     var result = JSON.parse(this.responseText);
     if(result.status) {

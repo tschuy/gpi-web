@@ -23,6 +23,19 @@ p {
     margin-right: auto;
 }
 
+#plugin_list {
+    padding-left: 30px;
+    padding-bottom: 15px;
+}
+
+.packagename {
+    font-weight: 300;
+}
+
+.packageversion {
+    font-weight: 300;
+}
+
 .code, .codeblock {
     font-family: 'Roboto Mono';
 }
